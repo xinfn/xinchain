@@ -1,14 +1,46 @@
-Xinchain
-
-A Decentralized Data Trading System
+#Xinchain -- A Highly Secure and Scalable Decentralized Public Ledger System
 
 Background
 ==========
+In the last 2-3 decades, we have witnessed the thrive of the internet and how 
+it affects us in our daily lives. It truly makes the world a better place for all of us. 
+However，while we enjoy the convinience that Internet has offered to us, the internet 
+itself has become more and more centralized which is the opposite of the original design of Internet 
+and inevitably brings more risks. Basic services such as DNS servers, PKI(public key infrastructures) 
+are all centralized, internet can be taken offline once these servers are attacked (DDOS etc.,),
+ or even worse, users are led to malicious servers. In the meanwhile, over the
+last decade, we’ve seen a shift from locally running desktop apps to cloud-based apps
+that store user data on remote servers(large corporarions such as Facebook、Google、 Amazon). 
+Because of the values of these data, those coporations have become the prime targets of 
+hackers. Once they are compromised, severe outcome happens(Yahoo, 2016, 500 million 
+user's information leaked). 
+
+Anyway, the Internet, as we currently know, is rife with identity theft, and spam and hacking.  
+To build a more secure healthy Internet, we believe a more decentralized Internet is the 
+solution and Xinchain: a scalable decentralized public ledger system is our first step to 
+achieve this goal.
+
+Xinchain is decentralized public ledger with its innovative consensus algorithm which can 
+achieve at least thousands of tps and high availability despite the existence of Byzantine
+nodes. Furthermore, it provides basisc services exactly like DNS, PKI without a trust party
+but more secure than the traditional one. Moreover, xinchain network provides end to end 
+encryption with forward security which can even resist quantum computers attack. Last but 
+not least, the Xinchain platform, buit on Xinchain, is embedded with a variety of crypto 
+tools such as: sMPC(secure multi-party computation)， CP-ABE（ciphertext policy-Attribute 
+Based Encrypyion），IPFS, Full Homorphic Encryption and so on which supports the development
+of many kinds of application with stringent privacy and security requirements. 
+
+
+Background
+==========
+ 
 
 With the development of the Internet, the transmission of data become more and
 more convenient, but at the same time, because the traditional Internet is based
 on a centralized architecture, all data need to be transferred through a
 centralized platform, this centralized model also brings many problems.
+
+
 
 One problem is the reliability of service. Because the data are stored on the
 central server, once the central server fails or the service provider shuts down
