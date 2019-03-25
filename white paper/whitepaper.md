@@ -30,6 +30,33 @@ tools such as: sMPC(secure multi-party computation)， CP-ABE（ciphertext polic
 Based Encrypyion），IPFS, Full Homorphic Encryption and so on which supports the development
 of many kinds of application with stringent privacy and security requirements. 
 
+Certificated Naming System
+==========
+In the traditional Internet, users judge an entity's validity they connect by a certificate signed by 
+a trusted CA. Ergo, a Internet service provider (e.g Google) usually needs to apply a certificate. 
+The applier generates a key-pair(public-key、private key) locally and submit an application request. The CA 
+verifies applier's identity then signs a certificate using its own private key and issue it
+to the applier. The CA includes applier's Public key key(e.g, RSA 2048bit) and some other related
+information, such as applier's name, address, certificate expiration time etc. However, since CA is 
+centralized, if CA is taken offline by hacking or compromised from inside. The internet will be left
+trust-less without certificate. 
+
+By xinchain, we could build a certificated naming system without a trust party. 
+Certificate's security、reliability and availability are guaranteed by the underlying
+Decentralized Public Ledger System. Any user can submit a transaction to this ledger 
+system to bind a public key(can be viewed as identity key, generated from a ECDSA，RSA
+or any other public key cryptosystem) to a human readable name and any other information 
+required, such as phone number、 email address. This information can be further used as 
+DNS service by Xinchain network, i.e. find a user by a readable name rather than a public 
+identity key. Users can also unbind or update these information related to their public 
+keys by submit a new transaction and a legit signature is provided. 
+
+
+
+
+Off-chain storage system
+========================
+
 
 Background
 ==========
