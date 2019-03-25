@@ -51,7 +51,44 @@ DNS service by Xinchain network, i.e. find a user by a readable name rather than
 identity key. Users can also unbind or update these information related to their public 
 keys by submit a new transaction and a legit signature is provided. 
 
+End to End Encryption with Quantum Resistance 
+==========
+To avoid traffic monitoring and targeted attacking, we can build an entirely anonymous Xinchain 
+network by end to end encryption with forward secrecy: every message is encrypted with a different
+message key and the compromise of the current message key can't be used to recover the previous 
+message key. Xinchain will use Double ratchet key update mechanism to derive new message key. 
+Double ratchet is popular among secret chat apps, such as Signal, Whatsapp, Telegram. 
 
+Another important feature of Xinchain End to End Encryption is Quantum Resistance. Nowadays, more
+and more people are beginning to talk about Quantum Computers which use quantum mechanics to 
+massively accelerate computation and how it may affect our lives. The research of quantum computers
+opens the Gates with new possibilities for many other research areas such as Machine learning, genetic 
+engineering, molecular simulation etc. One of the most important influence is public key cryptography, 
+according to the Shor's algorithm, all of the popular Public key cryptosystem(RSA, ElGamal, ECDSA and 
+so on) will be broken once a powerful quantum computer emerges. Public key cryptography is widely used 
+in applications and protocols assuring the confidentiality, authenticity and non-repudiability such as
+electronic communications(https) and data storage. So, if the public key cryptosystem is broken, the 
+whole internet is insecure.      
+
+Fortunately, there are already some progress in developing quantum resistant public key cryptography, 
+mainly are:
++ Lattice-based cryptography
++ Multivariate cryptography
++ Hash-based cryptography
++ Code-based cryptography
++ Supersingular elliptic curve isogeny cryptography
+Yet, currently, these algorithms are either insecure or too inefficient compared to ECDSA and RSA to be 
+put in applications. Google is the first who put a Lattice based key exchange algorithm called "New Hope" 
+based on Lattice Ring-LWE into application(Boring SSL), but it's for experiment purpose and need to be 
+used with traditional ECDSA to offset the efficiency issue. There are some other applications in blockchain
+ such as HCash, QRL and efficiency is still the big issue.
+
+In xinchain, we will investigate the newest post-quantum NIST proposal and find a most appropriate 
+algorithm which is the best tradeoff between security, performance and key size. Then we will integrate
+ it with our end to end encryption protocol: The key exchange part to guarantee quantum resistance. We 
+ may still want to integrate it with ECDSA in case efficiency is the issue. On the other hand, the 
+encryption part we use AES which is already quantum-resistant don't need further change but updating
+parameters to meet the security requirement. 
 
 
 Off-chain storage system
