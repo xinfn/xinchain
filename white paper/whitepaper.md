@@ -93,6 +93,41 @@ parameters to meet the security requirement.
 
 Off-chain storage system
 ========================
+Currently, block-chain technologies has very limited applications since most of them(Bitcoin、Ethereum) mainly 
+served as a database of transactions which is very expensive for a regular node to store(more than 200GB for bitcoin)
+ and it will keep growing as time passes by.
+
+On the other hand, the number of transactions be contained in a block is very limited since the maximum block size 
+is fixed and each transaction takes up space. This situation leads to low tps(e.g. 7tps tops for bitcoin without 
+segwit).
+
+Consequently, one intuitive thought to make xinchain more scalable is not using it as storage medium but rather 
+a tool to verify correctness. Complex logic should be kept outside of the xinchain. 
+
+Xinchain platform and applications built on xinchain platform will deal with these complex logic. User's 
+application data（either encrypted or plaintext）will be stored on the existing cloud storage(Dropbox, AWS,
+ Ali etc.) or distributed storage system like IPFS、 BitTorrent、Emule. Unlike traditional internet service
+ where users store their data on remote servers, users in Xinchain have absolute control over the access to
+ their own data. Applications and other users can gain access to a user's data via a valida access token 
+ issued and signed by this user if it's stored on cloud storage or a file hash if it's stored on distributed 
+ file system. If the file is encrypted via AES，3DES etc., extra decryption key will be required to access 
+ the raw data. As to the policy of how to gain acess control over a user's data and under what circumstance
+ the decryption key will be transfered, it's defined by a Xinchain smart contract. 
+
+Confidential Transactions
+============
+
+Consensus Mechanism
+============
+
+Other Scaling Solutions
+============
+
+AI
+============
+
+Various Crypto Tools
+============
 
 
 Background
