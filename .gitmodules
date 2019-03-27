@@ -1,0 +1,4 @@
+[submodule "eos"]
+	path = eos
+	url = https://github.com/xinfn/eos.git
+	branch = release/1.4.x
