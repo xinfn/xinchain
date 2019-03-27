@@ -93,18 +93,78 @@ parameters to meet the security requirement.
 
 Off-chain storage system
 ========================
+Currently, block-chain technologies has very limited applications since most of them(Bitcoin、Ethereum) mainly 
+served as a database of transactions which is very expensive for a regular node to store(more than 200GB for bitcoin)
+ and it will keep growing as time passes by.
+
+On the other hand, the number of transactions be contained in a block is very limited since the maximum block size 
+is fixed and each transaction takes up space. This situation leads to low tps(e.g. 7tps tops for bitcoin without 
+segwit).
+
+Consequently, one intuitive thought to make xinchain more scalable is not using it as storage medium but rather 
+a tool to verify correctness. Complex logic should be kept outside of the xinchain. 
+
+Xinchain platform and applications built on xinchain platform will deal with these complex logic. User's 
+application data（either encrypted or plaintext）will be stored on the existing cloud storage(Dropbox, AWS,
+ Ali etc.) or distributed storage system like IPFS、 BitTorrent、Emule. Unlike traditional internet service
+ where users store their data on remote servers, users in Xinchain have absolute control over the access to
+ their own data. Applications and other users can gain access to a user's data via a valida access token 
+ issued and signed by this user if it's stored on cloud storage or a file hash if it's stored on distributed 
+ file system. If the file is encrypted via AES，3DES etc., extra decryption key will be required to access 
+ the raw data. As to the policy of how to gain acess control over a user's data and under what circumstance
+ the decryption key will be transfered, it's defined by a Xinchain smart contract. 
+
+Confidential Transactions
+============
+Nowadays, users' privacy in the internet has been one of the most important issues. Some people may like to post 
+their daily activities, photos and moods on the internet(e.g. Facebook, twitter), but for the security sake, other
+ users may like to keep their identity and activities in private：such as their names, address, shopping records etc. 
+ In the traditional internet service, we trust our privacy with third parties, upload our personal info to the remote 
+ servers through registration or basic browsing activity. But somehow, we still get constant harassment calls from 
+ telemarkters. The remote trusted servers are compromised or our personal info just be sold by the dishonset third 
+ parties. Either way, they are pretty common currently.
+
+A comibination of the decentrilization and crypto privacy technology can solve internet's privacy issue. For a start, 
+we can see a transaction in bitcoin can pretty much hide sender and receiver's identity(sender and receiver are just 
+a string of characters). However, bitcoin doesn't provide true anonymity. To achieve true confidentiality, we can see 
+other efforts made in Dash, ZCash, Monero. Dash uses coinjoin to achieve anoymity but also require a trusted third party. 
+ZCash uses zksnark which is pretty advanced zero knowledge proof technology but has following problems:
++ required a trusted setup(public CRS) which may leave a trapdoor;
++ process to generate a private transaction is very slow(more than 40s), therefore, private transaction is not enabled 
+by default.
+
+In Xinchain, we intend to use Ring-CT which is already used in Monero to ensure confidentiality. Ring-CT uses Ring signature 
+developed by CryptoNote and Confidential transactions designed for Bitcoin by Greg Maxwell. It can protect sender and receiver's 
+identities as well as transaction amount but has better performance than Zksnark. We will also make further optimization to this 
+technology by improving efficiency and reducing transacion size. Some inovative ideas such as Zkstark will also be considered. 
 
 
-Background
-==========
+Consensus Mechanism
+============
+
+Other Scaling Solutions
+============
+
+AI
+============
+
+Various Crypto Tools
+============
+
  
 
+
+
+
+
+Application Case
+========
+
+##Introduction
 With the development of the Internet, the transmission of data become more and
 more convenient, but at the same time, because the traditional Internet is based
 on a centralized architecture, all data need to be transferred through a
 centralized platform, this centralized model also brings many problems.
-
-
 
 One problem is the reliability of service. Because the data are stored on the
 central server, once the central server fails or the service provider shuts down
@@ -127,13 +187,13 @@ platforms often benefit by drawing a percentage, which is also determined by
 platforms. Platforms can adjust the rules at any time, which is very unfair to
 both sides of the actual transaction.
 
-Xinchain
-========
 
-Xinchain is a decentralized data trading system, which aims to change the way of
-data distribution and transaction in traditional central architecture by using
-block chain technology. Xinchain is composed of three parts: decentralized
-storage and distribution system, decentralized retrieval system and
+##Xinchain Player
+Xinchain player is a decentralized film distribution system based on Xinchain where 
+Xinchain is served as a decentralized data trading system. Xinchain aims to change 
+the way of data distribution and transaction in traditional central architecture 
+by using block chain technology. Xinchain player is composed of three parts: 
+decentralized storage and distribution system, decentralized retrieval system and
 decentralized economic system.
 
 The user's personal data is published to the decentralized storage and
@@ -155,9 +215,6 @@ Based on block chain technology, file information published by users and
 transaction data will be recorded on the chain, which ensures the authenticity
 of data and the reliability of transactions.
 
-Xinchain Player
-===============
-
 Xinchain player is a decentralized film distribution system based on Xinchain.
 There are only two roles in this system. One is clients, the one is producers.
 Xinchain is based on Blockchain technology. When producers make a good movie,
@@ -169,9 +226,7 @@ distributing movies. Blockchain smart contract will perfectly deal with all
 transactions without any trust cost which is out the reach of traditional
 central servers.
 
-Economic Model
-==============
-
+##Economic Model
 Publishing a movie includes movie introduction, posters, trailers, movie and
 etc. The purpose of trailers is distributing movies which can attract clients.
 Watching trailers, sharing movies with friends can earn points. If a client
@@ -197,9 +252,7 @@ blockchain. Clients can use digital currency to recharge points in Xinchain,
 then clients can use points to do any trading. After trading, clients also can
 redeem their points to other digital currencies.
 
-Price Mechanism
-===============
-
+##Price Mechanism
 Publishers can decide the movie price. A publisher should set spending points
 for this movie when a publisher decides to publish a movie.
 
@@ -219,9 +272,7 @@ want to maximize client’s profits. If the system has enough nodes, the supply
 and demand will go to a balanced state, in other words, the bandwidth price will
 go to a stable state.
 
-Copyright Protection
-====================
-
+##Copyright Protection
 We use an asymmetric encryption algorithm to encrypt the movie content. When a
 publisher creates movies, then a public-private key pair was created. The
 Xinchain system will encrypt contents by using this key. So, publishers can
@@ -233,8 +284,7 @@ authorize clients, and clients will use a public key to generate a re-encryption
 private key. Doing this can secure the movie content and private key from
 publishers.
 
-Government Regulation
-=====================
+##Government Regulation
 
 Xinchain system should protect movie copyright and create a pure, healthy and
 green network for clients. Xinchain system will upload publisher information and
@@ -267,8 +317,8 @@ and pirating videos. If we verify the reporting information, we will lock this
 video to the blacklist. So, nobody can share and watch this video in the
 network.
 
-Technology Details
-==================
+##Technology Details
+
 
 Core business process
 ---------------------
@@ -388,8 +438,7 @@ broadcast this transaction to the target blockchain multiple sign address. When
 the gate observes this transaction, it will transfer digital currency to the
 correspondence account.
 
-Future Planning
-===============
+##Future Planning
 
 Xinchain player allows every creative content producer to release their original
 videos, make money directly through authorized playback, and let every content
