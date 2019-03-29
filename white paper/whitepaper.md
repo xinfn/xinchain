@@ -141,6 +141,30 @@ technology by improving efficiency and reducing transacion size. Some inovative 
 
 Consensus Mechanism
 ============
+Scalable Consensus Mechanism
+============
+Achieve consensus in a untrusted distirbuted system is quite a challenge. Traditional consensus mechanisms such as Paxos, Raft 
+are run in a trusted environment which assume all nodes follow the protocol. However, in a untrusted environment, nodes can be 
+malicious,  they may send corrupted messages to other nodes to mislead them.  
+
+PBFT is a classic algorithm to solve this kind of problem， it can tolerate 1/3 corrupted Byzantine nodes but can only run in a 
+small scale set of nodes. Proof of Work is a consensus algorithm Satoshi Nakamoto invented that can work on distributed system 
+with a large number of nodes： Transacions in a period of time are packed in a block,  every node who wish to record this block 
+needs to compute a hard math problem， whoever solve the problem gets the right to create a valid block and will get extra rewards. 
+This algorithm's security relies on the computing power of the whole network. However,  this algorithm is slow to reach consensus、 
+centralization caused by whale miner、 fork possibilities， 51% double spend etc. Most importantly, it's a huge waste of electric 
+power. Other Consensus algorithms such as PoS, DPoS，dBFT are environment-friendly, but they are more centralized and have additional 
+security issues.
+
+It was widely believed there was a impossible triangle for Blockchain technology, namely: effficiency、security、decentralization. 
+A blockchain can only meet at most two aspects. However, there was a breakthrough when Algorand team claimed their consensus algorithms 
+could solve the impossible triangle. Algorand consensus algorithm's main innocations is committee selection based on VRF (A committee 
+is a group of users who propose block and verify them). It sounds like DPoS, but more decentralized and secure. The committee selection 
+are random and changes every round. Further more, the possibility of a node being selected is propotional to the coins it has which 
+prevents sybil attack. Since Algorand, Difinity, Helix, ONT are also VRF based.
+
+Xinchain's consensus algorithm will also be VRF-based but with further improvement, such as, without gossip broadcasting, the possibility 
+of being selected are not propotional to the coins but also secure from sybil attack and so on.   
 
 Other Scaling Solutions
 ============
