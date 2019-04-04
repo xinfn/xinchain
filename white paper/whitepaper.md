@@ -1,11 +1,12 @@
-#Xinchain -- A Highly Secure and Scalable Decentralized Public Ledger System
+Xinchain -- A Highly Secure and Scalable Decentralized Public Ledger System
+==========
 
-Background
+Introduction
 ==========
 In the last 2-3 decades, we have witnessed the thrive of the internet and how 
-it affects us in our daily lives. It truly makes the world a better place for all of us. 
+it affects us in our daily lives: it truly makes the world a better place. 
 However，while we enjoy the convinience that Internet has offered to us, the internet 
-itself has become more and more centralized which is the opposite of the original design of Internet 
+itself has become more and more centralized which is the opposite of its original design
 and inevitably brings more risks. Basic services such as DNS servers, PKI(public key infrastructures) 
 are all centralized, internet can be taken offline once these servers are attacked (DDOS etc.,),
  or even worse, users are led to malicious servers. In the meanwhile, over the
@@ -15,20 +16,25 @@ Because of the values of these data, those coporations have become the prime tar
 hackers. Once they are compromised, severe outcome happens(Yahoo, 2016, 500 million 
 user's information leaked). 
 
-Anyway, the Internet, as we currently know, is rife with identity theft, and spam and hacking.  
+Anyway, the Internet, as we currently know, is rife with identity theft、spam and hacking.  
 To build a more secure healthy Internet, we believe a more decentralized Internet is the 
 solution and Xinchain: a scalable decentralized public ledger system is our first step to 
 achieve this goal.
 
-Xinchain is decentralized public ledger with its innovative consensus algorithm which can 
+Firstly, Xinchain is a decentralized public ledger with its innovative consensus algorithm which can 
 achieve at least thousands of tps and high availability despite the existence of Byzantine
-nodes. Furthermore, it provides basisc services exactly like DNS, PKI without a trust party
-but more secure than the traditional one. Moreover, xinchain network provides end to end 
-encryption with forward security which can even resist quantum computers attack. Last but 
-not least, the Xinchain platform, buit on Xinchain, is embedded with a variety of crypto 
-tools such as: sMPC(secure multi-party computation)， CP-ABE（ciphertext policy-Attribute 
-Based Encrypyion），IPFS, Full Homorphic Encryption and so on which supports the development
-of many kinds of application with stringent privacy and security requirements. 
+nodes. Secondly, it provides basisc services exactly like DNS, PKI without a trust party
+but more secure than the traditional one. Thirdly, xinchain network provides end to end 
+encryption with forward security which can even resist quantum computers attack. Fourthly, Xinchain’s 
+offchain distributed storage system will make it support more application cases. Fifthly, it supports 
+confidential transaction to hide sender、receiver's identity and other transaction details.
+Plus, the Xinchain platform, buit on Xinchain, is embedded with a variety of crypto 
+tools such as: sMPC(secure multi-party computation), CP-ABE（ciphertext policy-Attribute 
+Based Encrypyion), Full Homorphic Encryption and so on which supports the development
+of many kinds of application with stringent privacy and security requirements.  Last but not least, 
+Xinchain will integrate AI technology to automatically manage this dicentralized system better, 
+more flexible. In return, Xinchain provides computing power、data training(with privacy support) 
+market for AI training.
 
 Certificated Naming System
 ==========
@@ -104,7 +110,7 @@ segwit).
 Consequently, one intuitive thought to make xinchain more scalable is not using it as storage medium but rather 
 a tool to verify correctness. Complex logic should be kept outside of the xinchain. 
 
-Xinchain platform and applications built on xinchain platform will deal with these complex logic. User's 
+Xinchain platform and applications built on it will deal with these complex logic. User's 
 application data（either encrypted or plaintext）will be stored on the distributed storage system like 
 IPFS、 BitTorrent、Emule(With advantage over scalability and easy deployment, existing cloud storage like 
 Dropbox, AWS can also be an option, but needs trust to a third-party). Unlike traditional internet service
