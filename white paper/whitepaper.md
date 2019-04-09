@@ -32,8 +32,8 @@ Plus, the Xinchain platform, buit on Xinchain, is embedded with a variety of cry
 tools such as: sMPC(secure multi-party computation), CP-ABE（ciphertext policy-Attribute 
 Based Encrypyion), Full Homorphic Encryption and so on which supports the development
 of many kinds of application with stringent privacy and security requirements.  Last but not least, 
-Xinchain will integrate AI technology to automatically manage this dicentralized system better, 
-more flexible. In return, Xinchain provides computing power、data training(with privacy support) 
+Xinchain will integrate with AI technology to automatically manage Xinchain without human interference. 
+In return, Xinchain provides computing power、data training(with privacy support) 
 market for AI training.
 
 Certificated Naming System
@@ -49,7 +49,7 @@ trust-less without certificate.
 
 By xinchain, we could build a certificated naming system without a trust party. 
 Certificate's security、reliability and availability are guaranteed by the underlying
-Decentralized Public Ledger System. Any user can submit a transaction to this ledger 
+Decentralized Public Ledger System: Xinchain. Any user can submit a transaction to this ledger 
 system to bind a public key(can be viewed as identity key, generated from a ECDSA，RSA
 or any other public key cryptosystem) to a human readable name and any other information 
 required, such as phone number、 email address. This information can be further used as 
@@ -66,9 +66,9 @@ message key. Xinchain will use Double ratchet key update mechanism to derive new
 Double ratchet is popular among secret chat apps, such as Signal, Whatsapp, Telegram. 
 
 Another important feature of Xinchain End to End Encryption is Quantum Resistance. Nowadays, more
-and more people are beginning to talk about Quantum Computers which use quantum mechanics to 
+and more people are begin to talk about Quantum Computers which use quantum mechanics to 
 massively accelerate computation and how it may affect our lives. The research of quantum computers
-opens the Gates with new possibilities for many other research areas such as Machine learning, genetic 
+opens the gates with new possibilities for many other research areas such as Machine learning, genetic 
 engineering, molecular simulation etc. One of the most important influence is public key cryptography, 
 according to the Shor's algorithm, all of the popular Public key cryptosystem(RSA, ElGamal, ECDSA and 
 so on) will be broken once a powerful quantum computer emerges. Public key cryptography is widely used 
@@ -86,25 +86,25 @@ mainly are:
 Yet, currently, these algorithms are either insecure or too inefficient compared to ECDSA and RSA to be 
 put in applications. Google is the first who put a Lattice based key exchange algorithm called "New Hope" 
 based on Lattice Ring-LWE into application(Boring SSL), but it's for experiment purpose and need to be 
-used with traditional ECDSA to offset the efficiency issue. There are some other applications in blockchain
- such as HCash, QRL and efficiency is still the big issue.
+combined with traditional ECDSA to offset the efficiency issue. There are few blockchain applications which bring in
+quantum resistance such as HCash, QRL and efficiency is still the major concern.
 
 In xinchain, we will investigate the newest post-quantum NIST proposal and find a most appropriate 
 algorithm which is the best tradeoff between security, performance and key size. Then we will integrate
  it with our end to end encryption protocol: The key exchange part to guarantee quantum resistance. We 
- may still want to integrate it with ECDSA in case efficiency is the issue. On the other hand, the 
+ may need  traditional ECDSA in case efficiency is the issue. On the other hand, the 
 encryption part we use AES which is already quantum-resistant don't need further change but updating
 parameters to meet the security requirement. 
 
 
 Off-chain storage system
 ========================
-Currently, block-chain technologies has very limited applications since most of them(Bitcoin、Ethereum) mainly 
-served as a database of transactions which is very expensive for a regular node to store(more than 200GB for bitcoin)
+Currently, block-chain technologies has very limited applications since most of them(Bitcoin、Ethereum etc.) mainly 
+served as a database of transactions which is very expensive for regular nodes to store(more than 200GB for bitcoin)
  and it will keep growing as time passes by.
 
 On the other hand, the number of transactions be contained in a block is very limited since the maximum block size 
-is fixed and each transaction takes up space. This situation leads to low tps(e.g. 7tps tops for bitcoin without 
+is fixed and each transaction takes up certain space. This situation leads to low tps(e.g. 7tps tops for bitcoin without 
 segwit).
 
 Consequently, one intuitive thought to make xinchain more scalable is not using it as storage medium but rather 
@@ -117,19 +117,19 @@ Dropbox, AWS can also be an option, but needs trust to a third-party). Unlike tr
  where users store their data on remote servers, users in Xinchain have absolute control over the access to
  their own data. Applications and other users can gain access to a user's data via a valida access token 
  issued and signed by this user if it's stored on cloud storage or a file hash if it's stored on distributed 
- file system. If the file is encrypted via AES，3DES etc., extra decryption key will be required to access 
+ file system. If the file is encrypted via AES, 3DES etc., extra decryption key will be required to access 
  the raw data. As to the policy of how to gain acess control over a user's data and under what circumstance
  the decryption key will be transfered, it's defined by a Xinchain smart contract. 
 
 Confidential Transactions
 ============
-Nowadays, users' privacy in the internet has been one of the most important issues. Some people may like to post 
-their daily activities, photos and moods on the internet(e.g. Facebook, twitter), but for the security sake, other
- users may like to keep their identity and activities in private：such as their names, address, shopping records etc. 
- In the traditional internet service, we trust our privacy with third parties, upload our personal info to the remote 
- servers through registration or basic browsing activity. But somehow, we still get constant harassment calls from 
- telemarkters. The remote trusted servers are compromised or our personal info just be sold by the dishonset third 
- parties. Either way, they are pretty common currently.
+Nowadays, users' privacy in the internet has been one of the most important issues. Some people may like sharing 
+their lives with others: posting their daily activities, photos and moods on the internet(e.g. Facebook, twitter), 
+but for the security sake, other users may like to keep their identity and activities in private：such as their 
+names, address, shopping records etc. In the traditional internet service, we trust our privacy with third parties, 
+upload our personal info to the remote servers through registration or basic browsing activity. But somehow, we 
+still get constant harassment calls from telemarkters. The remote trusted servers is either compromised or our 
+personal info is sold by the dishonest third parties. Anyway, they are pretty common currently.
 
 A comibination of the decentrilization and crypto privacy technology can solve internet's privacy issue. For a start, 
 we can see a transaction in bitcoin can pretty much hide sender and receiver's identity(sender and receiver are just 
@@ -137,8 +137,8 @@ a string of characters). However, bitcoin doesn't provide true anonymity. To ach
 other efforts made in Dash, ZCash, Monero. Dash uses coinjoin to achieve anoymity but also require a trusted third party. 
 ZCash uses zksnark which is pretty advanced zero knowledge proof technology but has following problems:
 + required a trusted setup(public CRS) which may leave a trapdoor;
-+ process to generate a private transaction is very slow(more than 40s), therefore, private transaction is not enabled 
-by default.
++ process to generate a private transaction is very slow(more than 40s on a PC), therefore, private transaction is not 
+enabled by default.
 
 In Xinchain, we intend to use Ring-CT which is already used in Monero to ensure confidentiality. Ring-CT uses Ring signature 
 developed by CryptoNote and Confidential transactions designed for Bitcoin by Greg Maxwell. It can protect sender and receiver's 
