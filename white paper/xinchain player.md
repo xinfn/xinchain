@@ -2,6 +2,7 @@ Xinchain--A Decentralized Data Trading System
 ========
 
 ##Background
+
 With the development of the Internet, the transmission of data become more and
 more convenient, but at the same time, because the traditional Internet is based
 on a centralized architecture, all data need to be transferred through a
