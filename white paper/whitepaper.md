@@ -50,7 +50,7 @@ trust-less without certificate.
 By xinchain, we could build a certificated naming system without a trust party. 
 Certificate's security、reliability and availability are guaranteed by the underlying
 Decentralized Public Ledger System: Xinchain. Any user can submit a transaction to this ledger 
-system to bind a public key(can be viewed as identity key, generated from a ECDSA，RSA
+system to bind a public key(can be viewed as identity key, generated from a ECDSA, RSA
 or any other public key cryptosystem) to a human readable name and any other information 
 required, such as phone number、 email address. This information can be further used as 
 DNS service by Xinchain network, i.e. find a user by a readable name rather than a public 
