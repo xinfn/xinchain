@@ -1,5 +1,11 @@
 # xinchain
-Xinchain is a decentralized data trading system, which aims to change the way of data distribution and transaction in traditional central architecture by using block chain technology. Xinchain is composed of three parts: decentralized storage and distribution system, decentralized retrieval system and decentralized economic system.
+Xinchain -- A Highly Secure and Scalable Decentralized Public Ledger System with following features:
 
-## Smart contract platform
-Base on EOS v1.4.2.
+* Higly scalable consensus mechanism based on VRF
+* Certificated ID System and DNS services
+* Forward secure End to End Encryption with Quantum Resistance 
+* Distributed Offchain storage system 
+* Confidential transaction 
+* Various crypto tools
+* Intergrated with AI and provide computing power and training data market.
+
