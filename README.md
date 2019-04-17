@@ -8,3 +8,4 @@ Xinchain -- A Highly Secure and Scalable Decentralized Public Ledger System with
 * Confidential transaction 
 * Various crypto tools
 * Intergrated with AI and provide computing power and training data market.
+
